@@ -1,5 +1,8 @@
 // const CACHE_NAME = "static-cache-v2";
 // const DATA_CACHE_NAME = "data-cache-v1";
+
+
+
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
@@ -13,7 +16,11 @@ const FILES_TO_CACHE = [
 ];
 
 const RUNTIME = 'runtime';
+
+
 const PRECACHE = 'precache-v1';
+
+
 
 // install
 self.addEventListener("install", function (evt) {
@@ -21,14 +28,14 @@ self.addEventListener("install", function (evt) {
   evt.waitUntil(
     caches
       .open(PRECACHE)
-      .then((cache) => cache.addAll(FILES_TO_CACHE))
+        .then((cache) => cache.addAll(FILES_TO_CACHE))
       .then(self.skipWaiting())
   );
 
 
 });
 
-// activate
+// activate //
 self.addEventListener("activate", function (evt) {
   const currentCaches = [PRECACHE, RUNTIME];
   evt.waitUntil(
@@ -37,6 +44,7 @@ self.addEventListener("activate", function (evt) {
       .then((cacheNames) => {
         return cacheNames.filter((cacheName) => !currentCaches.includes(cacheName));
       })
+
 
       .then((cachesToDelete) => {
         return Promise.all(
@@ -53,7 +61,7 @@ self.addEventListener("activate", function (evt) {
 
 
 
-// fetch
+// fetch //
 self.addEventListener("fetch", function (evt) {
   if (evt.request.url.startsWith(self.location.origin)) {
     evt.respondWith(
