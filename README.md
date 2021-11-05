@@ -1,5 +1,5 @@
 # Progressive Budget Tracker
-A progresive web application for tracking and graphing a user's budget changes that saves user changes when offline to be updated when the user's connection is restored
+A progressive web application for tracking and graphing a user's budget changes that saves user changes when offline to be updated when the user's connection is restored
 
 # Deployment
 Github Repo:
