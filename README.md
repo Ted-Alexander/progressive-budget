@@ -6,4 +6,4 @@ Github Repo: https://github.com/Ted-Alexander/progressive-budget
 Heroku: https://progressive--budgettracker.herokuapp.com/
 
 # Screenshot
-![screenshot](/images/budget.png)
+![screenshot](/images/budget.PNG)
